@@ -1,3 +1,4 @@
 observation_id,PR,batch_id,prod_group,item_id,category,quantity,site_found,dept_found,operation,station,operator,description,proc_ind,date,rework
 10001,PR-001112223,52050623,NE.01,7250X-00012-0001,Wire Termination,3,SDAC,DRA,NE.WR,DRA-1,Flavio,Not enough brush showing,false,08/24/2026,0.25
 10002,PR-001112223,52050623,NE.01,7250X-00012-0001,Wire Termination,10,SDAC,DRA,NE.WR,DRA-1,Flavio,Bellmouth not present,false,08/24/2026,0.5
+10003,PR-001112223,52050623,NE.01,7250X-00012-0001,Wire Termination,5,SDAC,DRA,NE.WR,DRA-1,John,Incorrect Die Set,true,08/25/2026,0

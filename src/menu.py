@@ -1,14 +1,15 @@
 import pandas as pd
 
 from .observationSorter import load_df
-from .observationSorter import create_operator_statistics
+from .observationSorter import total_observations
 
 def show_menu():
     print("Menu:")
     print("1. Open Observation File")
     print("2. View Data")
-    print("3. Write Operator Specific Statistics (as .csv)")
-    print("4. Exit")
+    print("3. Count Total Observations by Operator")
+    print("4. Find Most Common Cause Code")
+    print("5. Exit")
 
 def open_observation_file():
     filename = input("Enter the path to the observation file: ")
@@ -34,7 +35,7 @@ def open_observation_file():
             return None
 
 def write_operator_statistics(df):
-    sorted_operator_stats = create_operator_statistics(df)
+    sorted_operator_stats = total_observations(df)
     return sorted_operator_stats
 
 

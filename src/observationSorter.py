@@ -4,9 +4,7 @@ def load_df(filename):
     df = pd.read_csv(filename)
     return df
 
-def group_by_operator(df):
-    operator_stats = df.groupby('Operator').count()
-    sorted_stats = operator_stats.sort_values(by='Observation', ascending=False)
-    return sorted_stats
-
-
+def count_observations(df):
+    total_observations = df.groupby('operator').size().reset_index(name='total_observations')
+    total_observations = total_observations.sort_values(by='total_observations', ascending=False).reset_index(drop=True)
+    return total_observations

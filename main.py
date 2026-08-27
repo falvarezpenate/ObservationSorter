@@ -25,10 +25,19 @@ def main():
         elif choice == "3":
             if 'df' in locals():
                 clear_screen()
-                write_operator_statistics(df)
+                print("\n\nTotal Observations by Operator:")
+                op_df =write_operator_statistics(df)
+                print(op_df)
             else:
                 print("Please open an observation file first.")
         elif choice == "4":
+            if 'df' in locals():
+                clear_screen()
+                print("\n\nMost Common Cause Codes:")
+                # Implement the logic to find the most common cause code here
+            else:
+                print("Please open an observation file first.")
+        elif choice == "5":
             print("Exiting...")
             break
         else:
