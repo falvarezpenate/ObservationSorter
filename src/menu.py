@@ -1,7 +1,6 @@
 import pandas as pd
 
-from .observationSorter import load_df
-from .observationSorter import total_observations
+from .observationSorter import load_df, count_observations, count_cause_codes, count_cause_codes_by_date
 
 def show_menu():
     print("Menu:")
@@ -35,7 +34,13 @@ def open_observation_file():
             return None
 
 def write_operator_statistics(df):
-    sorted_operator_stats = total_observations(df)
+    sorted_operator_stats = count_observations(df)
     return sorted_operator_stats
 
-
+def write_cause_code_statistics(df):
+    date = input("Enter a date (mm/dd/yyyy) to filter the cause codes (or press Enter to display all): ")
+    if date:
+        sorted_cause_code_stats = count_cause_codes_by_date(df, date)
+    else:
+        sorted_cause_code_stats = count_cause_codes(df)
+    return sorted_cause_code_stats

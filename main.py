@@ -4,6 +4,7 @@ import sys
 from src.menu import show_menu
 from src.menu import open_observation_file
 from src.menu import write_operator_statistics
+from src.menu import write_cause_code_statistics
 
 def clear_screen():
     sys.stdout.write('\033[2J\033[H')
@@ -25,7 +26,7 @@ def main():
         elif choice == "3":
             if 'df' in locals():
                 clear_screen()
-                print("\n\nTotal Observations by Operator:")
+                print("Total Observations by Operator:")
                 op_df =write_operator_statistics(df)
                 print(op_df)
             else:
@@ -33,8 +34,9 @@ def main():
         elif choice == "4":
             if 'df' in locals():
                 clear_screen()
-                print("\n\nMost Common Cause Codes:")
-                # Implement the logic to find the most common cause code here
+                cause_code_df = write_cause_code_statistics(df)
+                print("\nMost Common Cause Codes:")
+                print(cause_code_df)
             else:
                 print("Please open an observation file first.")
         elif choice == "5":

@@ -1,4 +1,9 @@
 observation_id,PR,batch_id,prod_group,item_id,category,quantity,site_found,dept_found,operation,station,operator,description,proc_ind,date,rework
-10001,PR-001112223,52050623,NE.01,7250X-00012-0001,Wire Termination,3,SDAC,DRA,NE.WR,DRA-1,Flavio,Not enough brush showing,false,08/24/2026,0.25
-10002,PR-001112223,52050623,NE.01,7250X-00012-0001,Wire Termination,10,SDAC,DRA,NE.WR,DRA-1,Flavio,Bellmouth not present,false,08/24/2026,0.5
-10003,PR-001112223,52050623,NE.01,7250X-00012-0001,Wire Termination,5,SDAC,DRA,NE.WR,DRA-1,John,Incorrect Die Set,true,08/25/2026,0
+10001,PR-001112223,52050623,NE.07,7250X-00012-0001,Wire Termination,3,SDAC,DRA,NE.WR,DRA-1,Flavio,Not enough brush showing,false,08/24/2026,0.25
+10002,PR-001112223,52050623,NE.07,7250X-00012-0001,Wire Termination,10,SDAC,DRA,NE.WR,DRA-1,Flavio,Bellmouth not present,false,08/24/2026,0.5
+10003,PR-001112223,52050623,NE.07,7250X-00012-0001,Wire Termination,5,SDAC,DRA,NE.WR,DRA-1,John,Incorrect Die Set,true,08/25/2026,0
+10004,PR-001112224,52050624,NE.07,7250X-00125-0008,Flipped Hardware,1,SDAC,DRA,NE.ME,DRA-10,Jane,Standoffs upside down,false,08/25/2026,0.75
+10005,PR-001112224,52050624,NE.07,7250X-00125-0008,Missing Torque Marks/Sticker,3,SDAC,DRA,NE.ME,DRA-10,Jane,No torque marks on component,false,08/25/2026,0.15
+10006,PR-001112224,52050624,NE.07,7250X-00125-0008,Missing Torque Marks/Sticker,1,SDAC,DRA,NE.ME,DRA-10,Jane,No torque mark sticker on relay,false,08/25/2026,0.15
+10007,PR-001112224,52050624,NE.07,7250X-00125-0008,Missing Documentation,1,SDAC,DRA,NE.ME,DRA-10,Jane,No highlights on prod bom,true,08/25/2026,0
+
