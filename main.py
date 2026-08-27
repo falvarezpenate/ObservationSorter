@@ -13,15 +13,22 @@ def main():
     while True:
         clear_screen()
         show_menu()
-        choice = input("Enter your choice (1-3): ")
+        choice = input("Enter your choice (1-4): ")
         if choice == "1":
             df = open_observation_file()
         elif choice == "2":
             if 'df' in locals():
-                write_operator_statistics(df)
+                print("\n\nData Preview:")
+                print(df)
             else:
                 print("Please open an observation file first.")
         elif choice == "3":
+            if 'df' in locals():
+                clear_screen()
+                write_operator_statistics(df)
+            else:
+                print("Please open an observation file first.")
+        elif choice == "4":
             print("Exiting...")
             break
         else:
