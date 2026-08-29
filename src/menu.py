@@ -1,6 +1,6 @@
 import pandas as pd
 
-from .observationSorter import load_df, count_observations, count_cause_codes, count_cause_codes_by_date
+from .observationSorter import load_df, count_observations, count_cause_codes, count_cause_codes_by_date, generate_most_common_operator_defect
 
 def show_menu():
     print("Menu:")
@@ -8,7 +8,8 @@ def show_menu():
     print("2. View Data")
     print("3. Count Total Observations by Operator")
     print("4. Find Most Common Cause Code")
-    print("5. Exit")
+    print("5. Find Most Common Cause Code by Operator")
+    print("6. Exit")
 
 def open_observation_file():
     filename = input("Enter the path to the observation file: ")
@@ -44,3 +45,7 @@ def write_cause_code_statistics(df):
     else:
         sorted_cause_code_stats = count_cause_codes(df)
     return sorted_cause_code_stats
+
+def write_most_common_operator_defect(df):
+    most_common_defects = generate_most_common_operator_defect(df)
+    return most_common_defects
