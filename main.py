@@ -15,7 +15,7 @@ def main():
     while True:
         clear_screen()
         show_menu()
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-6): ")
         if choice == "1":
             df = open_observation_file()
         elif choice == "2":

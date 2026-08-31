@@ -2,6 +2,7 @@ import pandas as pd
 
 from .observationSorter import load_df, count_observations, count_cause_codes, count_cause_codes_by_date, generate_most_common_operator_defect
 
+# Prints the menu options to the console
 def show_menu():
     print("Menu:")
     print("1. Open Observation File")
@@ -11,6 +12,7 @@ def show_menu():
     print("5. Find Most Common Cause Code by Operator")
     print("6. Exit")
 
+# Opens the observation file and returns the DataFrame
 def open_observation_file():
     filename = input("Enter the path to the observation file: ")
     if filename == "":
@@ -34,18 +36,32 @@ def open_observation_file():
             print(f"An error occurred while opening the file: {e}")
             return None
 
+# Calls helper function to count total observations by operator and returns the sorted DataFrame
 def write_operator_statistics(df):
     sorted_operator_stats = count_observations(df)
     return sorted_operator_stats
 
+# Calls helper function to count cause codes and returns the sorted DataFrame
 def write_cause_code_statistics(df):
     date = input("Enter a date (mm/dd/yyyy) to filter the cause codes (or press Enter to display all): ")
     if date:
+        # Split the date string into tokens
+        date_tokens = date.split('/')
+        # Check that date entered is valid.
+        if len(date_tokens) != 3 or not all(token.isdigit() for token in date_tokens):
+            print("Invalid date format. Please use mm/dd/yyyy.")
+            return None
+
         sorted_cause_code_stats = count_cause_codes_by_date(df, date)
+        # Check if the filtered DataFrame is empty
+        if sorted_cause_code_stats.empty:
+            print(f"\nNo cause codes found for the date {date}.")
+            return None
     else:
         sorted_cause_code_stats = count_cause_codes(df)
     return sorted_cause_code_stats
 
+# Calls helper function to find the most common cause code by operator and returns the DataFrame
 def write_most_common_operator_defect(df):
     most_common_defects = generate_most_common_operator_defect(df)
     return most_common_defects
