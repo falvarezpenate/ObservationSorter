@@ -6,6 +6,7 @@ from src.menu import open_observation_file
 from src.menu import write_operator_statistics
 from src.menu import write_cause_code_statistics
 from src.menu import write_most_common_operator_defect
+from src.menu import save_output
 
 def clear_screen():
     sys.stdout.write('\033[2J\033[H')
@@ -30,6 +31,7 @@ def main():
                 print("Total Observations by Operator:")
                 op_df =write_operator_statistics(df)
                 print(op_df)
+                save_output(op_df, "operator_statistics.csv")
             else:
                 print("Please open an observation file first.")
         elif choice == "4":
@@ -38,6 +40,7 @@ def main():
                 cause_code_df = write_cause_code_statistics(df)
                 print("\nMost Common Cause Codes:")
                 print(cause_code_df)
+                save_output(cause_code_df, "cause_code_statistics.csv")
             else:
                 print("Please open an observation file first.")
         elif choice == "5":
@@ -46,6 +49,7 @@ def main():
                 most_common_defects_df = write_most_common_operator_defect(df)
                 print("\nMost Common Cause Codes by Operator:")
                 print(most_common_defects_df)
+                save_output(most_common_defects_df, "most_common_operator_defects.csv")
             else:
                 print("Please open an observation file first.")
         elif choice == "6":

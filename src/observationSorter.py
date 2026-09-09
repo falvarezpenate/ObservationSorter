@@ -36,3 +36,8 @@ def generate_most_common_operator_defect(df):
     # Drop duplicates to keep only the highest count for each operator
     highest_counts_df = sorted_counts_df.drop_duplicates(subset=['operator'], keep='first').reset_index(drop=True)
     return highest_counts_df
+
+# Write a DataFrame to a CSV file
+def write_to_csv(df, filename):
+    df.to_csv(filename, index=False)
+    print(f"Data written to {filename}")

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from .observationSorter import load_df, count_observations, count_cause_codes, count_cause_codes_by_date, generate_most_common_operator_defect
+from .observationSorter import load_df, count_observations, count_cause_codes, count_cause_codes_by_date, generate_most_common_operator_defect, write_to_csv
 
 # Prints the menu options to the console
 def show_menu():
@@ -65,3 +65,11 @@ def write_cause_code_statistics(df):
 def write_most_common_operator_defect(df):
     most_common_defects = generate_most_common_operator_defect(df)
     return most_common_defects
+
+def save_output(df, default_filename):
+    res = input("Do you want to save the output to a CSV file? (y/n): ")
+    if res.lower() == 'y':
+        filename = input(f"Enter the filename to save the output (default: {default_filename}): ")
+        if not filename:
+            filename = default_filename
+        write_to_csv(df, "output/" + filename)
