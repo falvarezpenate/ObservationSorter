@@ -7,10 +7,7 @@ from src.menu import write_operator_statistics
 from src.menu import write_cause_code_statistics
 from src.menu import write_most_common_operator_defect
 from src.menu import save_output
-
-def clear_screen():
-    sys.stdout.write('\033[2J\033[H')
-    sys.stdout.flush()
+from src.menu import clear_screen
 
 def main():
     while True:

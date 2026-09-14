@@ -1,7 +1,15 @@
+import os
 import pandas as pd
-
 from .observationSorter import load_df, count_observations, count_cause_codes, count_cause_codes_by_date, generate_most_common_operator_defect, write_to_csv
 
+
+def clear_screen():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+
+        
 # Prints the menu options to the console
 def show_menu():
     print("Menu:")
